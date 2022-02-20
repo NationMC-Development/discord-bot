@@ -18,8 +18,11 @@ async def about(ctx):
     embed.add_field(name="製作者", value="Mumeinosato#7252 \n[無名の里](https://www.youtube.com/channel/UCpb92184AP2Ffhyf7u2bD3w?view_as=subscriber) [@mumeinosato](https://mobile.twitter.com/mumeinosato)",inline=False)
     embed.add_field(name="このbotを招待", value="[こちら](https://discord.com/api/oauth2/authorize?client_id=936868771371569203&permissions=8&scope=bot)から招待できます",inline=False)
     await ctx.send(embed=embed)
-
-
+#ping値の送信
+@bot.command(name="ping")
+async def ping(ctx: commands.Context):
+    await ctx.send(f"Pong!:ping_pong: {round(bot.latency * 1000)}ms")
+    
 @bot.event
 async def on_message(message):
     """
